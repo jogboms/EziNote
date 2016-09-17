@@ -1,0 +1,23 @@
+:host {
+  display: block;
+  height: auto !important;
+
+  & >> [hidden],  & >> template {
+    display: none !important;
+  }
+}
+
+#content {
+  z-index: 200;
+  position: relative;
+}
+.page {
+  position: relative;
+
+  .content {
+    text-align: center;
+    transition: .75s all cubic-bezier(1, -0.06, 0, 0.98);
+
+    > .jumbotron {}
+  }
+}

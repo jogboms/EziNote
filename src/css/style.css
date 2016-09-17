@@ -1,0 +1,200 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html, body {
+  background: white;
+  font-family: 'Segoe UI Light', consolas;
+  letter-spacing: 1px;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  /* display: table; */
+}
+
+body {
+}
+
+body::-webkit-scrollbar {
+  width: 0px;
+}
+
+body > .app {
+}
+
+body > .app > main {
+  height: 100%;
+  display: block;
+}
+
+body > footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.menubar {
+  -webkit-app-region: drag;
+  -webkit-user-select: none;
+  background: #E91E63;
+  text-align: right;
+}
+
+.menubar:hover {
+  /* background: black; */
+}
+
+.menubar:hover + .main {
+  opacity: .5;
+}
+
+.menubar + .main {
+  height: 94%;
+  padding-bottom: 6%;
+  position: fixed;
+  overflow-y: scroll;
+}
+
+.menubar + .main * {
+  position: relative;
+}
+
+.menubar + .main::-webkit-scrollbar {
+  width: 0px;
+}
+
+.menubar span {
+  font-size: 25px;
+  color: white;
+  padding: 1px 5pt;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-app-region: no-drag;
+}
+
+.menubar span:hover {
+  background-color: rgba(0,0,0,.125);
+}
+
+.main {
+  max-width: 640px;
+  width: 100%;
+  transition: all ease-in-out .5s;
+  background: white;
+  margin: 0em auto 1pt auto;
+  color: #666;
+  text-align: center;
+}
+
+.main h1 {
+  font-size: 40px;
+  margin: 0;
+  padding: .5em 0px 1em 0px;
+  border-bottom: 3px solid lightgray;
+}
+
+p {
+  margin-top: 0;
+}
+
+form {
+  margin: 1em auto 2em auto;
+}
+
+form label {
+  color: #aaa;
+  font-size: 10pt;
+  padding-right: 1em;
+  width: auto;
+}
+
+form textarea:hover,
+form input:hover {
+  /* width: 50%; */
+}
+form textarea.focus, form textarea:focus,
+form input.focus, form input:focus {
+  border: none;
+  box-shadow: none;
+  outline-width: 0;
+  border-bottom: 2px solid #D81B60;
+  width: 95%;
+  margin: 0 auto;
+  display: block;
+  padding: 1em 2em;
+}
+
+form textarea,
+form input {
+  border: none;
+  width: 60%;
+  transition: all ease-in-out .5s;
+  border-bottom: 1px transparent solid;
+  padding: 8px 5px;
+  display: inline-block;
+  /* width: 20%; */
+}
+form button[disabled] {
+  opacity: .5;
+}
+
+form button {
+  padding: 10px 25px;
+  background: #D81B60;
+  outline: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+form button.cancel {
+  background: whitesmoke;
+  color: #999;
+  padding: 5px;
+}
+
+a.btn {
+  padding: 4pt 5pt;
+  outline: none;
+  border: none;
+  color: inherit;
+  display: inline-block;
+  text-align: center;
+  font-size: 10pt;
+  background: white;
+}
+a.btn.x {
+  color: #F44336;
+}
+
+a.btn.opt {
+  background: #03A9F4;
+  color: white;
+}
+
+.btn {
+  margin: 3px;
+}
+.btn, .btn:hover, .btn:active {
+  text-decoration: none;
+}
+
+progress[value] {
+  -webkit-appearance: none;
+  height: 5px;
+  width: 80%;
+  display:block;
+  margin: 3pt auto;
+}
+
+progress::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: 1em;
+}
+progress::-webkit-progress-value {
+  background-color: rgb(233, 30, 99);
+  border-radius: 1em;
+}

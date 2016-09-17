@@ -1,0 +1,89 @@
+<div class="jumbotron">
+  <div class="col-sm-3 text-left">
+    <h1 style="color:white;" class="remove-top">
+      <span
+        style="font-size: 75%"
+        class="mat mat-{{ note.greeting_code == 0 ? 'cloud_queue text-primary' : (note.greeting_code == 1 ? 'brightness_high text-warning' : 'star text-danger')}}">
+      </span>
+      <br />
+      {{ note.time }}
+      <div class="small">{{ note.state }}</div>
+    </h1>
+    <br />
+
+    <h3 style="color:gainsboro">
+      <small style="color:grey">Good {{ note.greeting }},</small>
+      <br />
+      <span style="text-transform: capitalize;">{{ user }}</span>.
+    </h3>
+    <br />
+    <h6 style="color:gainsboro">
+      <small>{{ note.content.trim().split(' ').length }} word<small>(s)</small>.</small>
+    </h6>
+
+    <br />
+
+    <div class="text-left">
+      <a href="#" *ngIf="note.editing" (click)="onViewNote($event)"
+        class="btn btn-outline no-shadow btn-{{ note.greeting_code == 0 ? 'primary' : (note.greeting_code == 1 ? 'warning' : 'info')}}">
+        <span class="mat mat-live_tv fa-lg"></span>
+        <span class="block">PREVIEW</span>
+      </a>
+      <a href="#" *ngIf="note.viewing" (click)="onEditNote($event)"
+        class="btn btn-outline no-shadow btn-{{ note.greeting_code == 0 ? 'warning' : (note.greeting_code == 1 ? 'info' : 'primary')}}">
+        <span class="mat mat-edit fa-lg"></span>
+        <span class="block">&nbsp;EDIT&nbsp;</span>
+      </a>
+    </div>
+  </div>
+
+
+  <div class="col-sm-9" style="border-left: 2pt solid rgba(158, 158, 158, 0.21);">
+    <div [hidden]="note.editing" class="text-left">
+      <style type="text/css">
+        p.lead {
+          color: ghostwhite;
+          max-height: 420px;
+          overflow-y: scroll;
+        }
+        p.lead::-webkit-scrollbar {
+          width: 0px;
+        }
+      </style>
+      <h1
+        class="remove-top"
+        style="color: ghostwhite;">
+        {{ note.title }}</h1>
+
+      <p class="lead" [innerHTML]="note.content"></p>
+    </div>
+
+    <div [hidden]="note.viewing">
+      <div [hidden]="!success" class="alert alert-success">
+        <strong>Success</strong> You just successfully completed that action.
+      </div>
+
+      <form class="form" action="" method="POST" role="form">
+        <!-- <span class="close text-white" (click)="onClose()">&times;</span> -->
+        <div class="form-group">
+          <input
+            style="font-size: 15pt; color: ghostwhite;border-color:transparent"
+            #titleinput type="text" (keyup)="onKeyUp(titleinput, textarea)" class="form-control" [value]="note.title" placeholder="title..." />
+        </div>
+        <div class="form-group">
+          <textarea id="summernote"
+            style="font-size: 15pt; color: ghostwhite;border-color:transparent"
+            autofocus="true" #textarea
+            (keyup)="onKeyUp(titleinput, textarea)"
+            name="" rows="10" class="form-control"
+            [value]="note.content"></textarea>
+        </div>
+        <div class="form-group text-left">
+          <button (click)="onSave()" type="button" class="btn btn-success btn-lg btn-circle">
+            <span class="mat mat-save fa-lg"></span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

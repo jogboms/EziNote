@@ -1,0 +1,23 @@
+<div class="jumbotron">
+  <h1>
+    {{ note.time }}
+    <small>{{ note.state }}</small>
+  </h1>
+  <br />
+
+  <h3>
+    <span>Good {{ note.greeting }}</span>
+    <span [hidden]="!user.length">
+      , <span style="text-transform: capitalize;">{{ user }}</span>.
+    </span>
+  </h3>
+
+  <br />
+
+  <h5>What would you like to write today.</h5>
+
+  <div class="col-md-6 col-xs-8 col-center">
+    <input #input autofocus="true" type="text" (keyup)="onKeyUp($event)" [value]="striped" class="form-control" id="">
+    <div class="help-block" [hidden]="input.value.length <= limit">Press Enter to continue... </div>
+  </div>
+</div>

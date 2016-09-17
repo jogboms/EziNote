@@ -1,0 +1,74 @@
+.menu {
+
+  h5 {
+    color: gainsboro;
+    display: inline-block;
+    margin: 1rem;
+  }
+  ul {
+    text-align: right;
+    float: right;
+
+    li {
+      display: inline-block;
+      margin: 1rem;
+      border-radius: 50%;
+      border: gainsboro solid 2pt;
+
+      a {
+        padding: .5rem .7rem;
+        color: gainsboro;
+
+        &:hover, &:focus {
+          background: transparent;
+        }
+      }
+    }
+  }
+}
+
+.my_modal {
+  z-index: 99;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 2rem;
+  transition: 1s all ease-in-out;
+
+  &:before {
+    content: close-quote;
+    background: rgba(0, 0, 0, 0.85);
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    right: 0;
+    bottom: 0;
+  }
+
+  .my_modal_content {
+    transform: translateY(50%);
+    transform-origin: 0;
+    position: relative;
+  }
+}
+
+#about_block {
+  padding: 3rem 6rem 3rem 6rem;
+  border-radius: 4px;
+
+  h1 {
+    margin-top: 0;
+
+    small {
+      display: block;
+    }
+  }
+  p {
+    margin: 3.5rem auto;
+  }
+  footer {}
+}

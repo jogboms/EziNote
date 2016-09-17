@@ -1,0 +1,36 @@
+<div class="container text-right add-bottom">
+  <form action="" method="POST" role="form" class="form-inline pull-left">
+    <div class="form-group">
+      <input id="searchbox" (keyup)="onSearch(searchbox)" #searchbox type="search" class="form-control input-sm" placeholder="search">
+    </div>
+
+    <span (click)="onSort()" class="btn btn-sm {{ isSort ? 'btn-default btn-outline':''}}">
+      <span class="mat fa-lg mat-access_time"></span>
+    </span>
+
+    <span (click)="onCancel(searchbox)" class="btn btn-xs {{ (isSort || isSearch) ? 'btn-success text-white': 'btn-warning btn-outline' }}"> <small>x</small> </span>
+  </form>
+  <span (click)="onSwitch(false)" class="btn btn-sm {{ isList == false ? 'btn-default btn-outline':'' }}">
+    <span class="mat fa-lg mat-view_module"></span>
+  </span>
+  <span (click)="onSwitch(true)" class="btn btn-sm {{ isList == true ? 'btn-default btn-outline':'' }}">
+    <span class="mat fa-lg mat-view_stream"></span>
+  </span>
+</div>
+
+<div class="jumbotron" style="background: rgba(70, 70, 70, 0.44);padding: 30px;">
+  <div class="row no-scroll container-fluid" style="max-height:520px;overflow-y: scroll">
+
+    <div *ngIf="notes.length == 0" class="container">
+      <div class="alert alert-danger col-md-6 col-center">
+        No Notes found.
+      </div>
+    </div>
+
+    <div *ngIf="notes.length" class="container">
+
+      <card *ngFor="let note of notes" [note]="note" [state]="!isList"></card>
+
+    </div>
+  </div>
+</div>

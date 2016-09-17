@@ -1,0 +1,16 @@
+{
+  "name": "EziNote",
+  "main": "index.html",
+  "window": {
+    "title": "EziNote v1.0",
+    "toolbar": true,
+    "resizable": true,
+    "width": 1200,
+    "height": 680,
+    "frame": true,
+    "position": "center"
+  },
+  "chromium-args": "--mixed-context",
+  "version": "1.0.0",
+  "author": "jogboms"
+}

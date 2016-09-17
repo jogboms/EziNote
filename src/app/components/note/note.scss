@@ -1,0 +1,14 @@
+.jumbotron {
+  display: block;
+  padding-top: 10px;
+
+  textarea {
+
+    &, &:focus {
+      box-shadow: none !important;
+    }
+    &::-webkit-scrollbar {
+      width: 0px;
+    }
+  }
+}

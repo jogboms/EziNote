@@ -1,0 +1,24 @@
+<div class="card" [class.row]="state" [class.row2]="!state">
+  <div class="card-front" [class.col-xs-4]="!state">
+    <div class="card-head">
+      <h3>{{ note.time }}</h3>
+      <span [style.background]="note.state == 'pm' ?'#E91F63':'#0bd0bd'">
+        {{ note.state }}
+      </span>
+      <small>
+        {{ note.date | date}}
+      </small>
+    </div>
+    <div class="card-footer">
+      <button type="button" (click)="onPreview($event)" class="btn btn-block" style="background:transparent;box-shadow:none;">PREVIEW</button>
+    </div>
+  </div>
+  <div class="card-back" [class.col-xs-8]="!state" [class.hidden]="state">
+    <div class="card-body">
+      <h6>
+        <span>{{ note.title }}</span>
+      </h6>
+      <p [innerHTML]="note.content.substr(0, 100)+(note.content.length > 150 ? '...':'')"></p>
+    </div>
+  </div>
+</div>

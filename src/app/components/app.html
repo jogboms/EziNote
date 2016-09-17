@@ -1,0 +1,30 @@
+<div id="content" class="clearfix">
+  <menu-bar [user]="settings?.user"></menu-bar>
+
+  <div class="page container-fluid">
+    <div class="content container slide {{settings.page == 'main' ? 'on':'off'}}">
+
+      <start *ngIf="settings.page == 'main'" (onChangeEvent)="onTypeEvent($event)" [user]="settings?.user" [note]="note"></start>
+
+    </div>
+
+    <div class="content container-fluid slide {{settings.page == 'create' ? 'on':'off'}}">
+
+      <note *ngIf="settings.page == 'create'" (onChangeEvent)="onChangeEvent($event)" [user]="settings?.user" [note]="note"></note>
+
+    </div>
+
+    <div class="content row slide {{settings.page == 'book' ? 'on':'off'}}">
+
+      <book *ngIf="settings.page == 'book'"></book>
+
+    </div>
+
+    <div class="content row slide {{settings.page == 'preview' ? 'on':'off'}}">
+
+      <note *ngIf="settings.page == 'preview'" [user]="settings?.user" [note]="settings.note"></note>
+
+    </div>
+  </div>
+
+</div>

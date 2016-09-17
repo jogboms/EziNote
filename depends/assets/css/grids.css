@@ -1,0 +1,51 @@
+.grid-body {
+  background-color: gainsboro;
+  background-image: none;
+  padding-bottom: 1em;
+}
+.grid-lock {
+  /*padding: 1rem 5rem 5rem 5rem;*/
+}
+.grid-lock > * {
+  margin: 0;
+}
+/*.grid-lock[class*="col-"],*/
+.grid-lock > [class*="col-"] {
+  padding: 0;
+}
+.grid-lock .grids {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.grids {
+  margin-bottom: 1em;
+  padding: 1em;
+  display: block;
+  overflow: hidden;
+  word-break: break-word;
+/*  border: 1pt solid lightgrey;
+  color: darkslategray; */
+  /*border: 1pt solid rgb(198, 199, 198);*/
+  color: darkslategray;
+  /*box-shadow: inset 0px 0px 10px rgba(100,100,100,.1),1px 1px 10px rgba(100,100,100,.05);*/
+}
+@media screen and (min-width: 1025px){
+  .grids {
+    padding: 1.25em;
+  }
+}
+.grids.grids-lg {
+  padding: 1.25em;
+}
+.grids.grids-md {
+  padding: .75em .95em;
+}
+.grids.grids-sm {
+  padding: .25em .75em;
+}
+.grids.grids-xs {
+  padding: 2pt 5pt;
+}
+/*.grids[class*='bg'] > * {
+  text-shadow: 0px 1px rgba(250, 245, 245, 0.5);
+}*/

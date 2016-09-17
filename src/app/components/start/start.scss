@@ -1,0 +1,41 @@
+.jumbotron {
+  display: block;
+
+  > h3 {
+    color: #bbb;
+  }
+  > h1 {
+    color: white;
+    font-size: 20rem;
+    display: inline-block;
+    margin: 1rem;
+    letter-spacing: 8pt;
+    text-transform: uppercase;
+
+    small {
+      display: block;
+      font-size: 3rem;
+      letter-spacing: 1pt;
+    }
+  }
+  > h5 {
+    color: grey;
+  }
+
+  input {
+    color: whitesmoke;
+    border-bottom: 1px dotted rgba(233, 30, 99, 0.61);
+
+    &, &:focus {
+      box-shadow: inset 0 -1px 0 #212121;
+    }
+  }
+  textarea {
+    &, &:focus {
+      box-shadow: none !important;
+    }
+    &::-webkit-scrollbar {
+      width: 0px;
+    }
+  }
+}

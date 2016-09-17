@@ -1,0 +1,159 @@
+main {
+  // display: table;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+  min-height: 100%;
+  background-image: url('/img/bg/6.jpg');
+  background-repeat: round;
+  background-size: cover;
+  transition: 2s background-image cubic-bezier(0.99, 0.62, 0.35, 1.1);
+
+  &:after {
+    content: close-quote;
+    display: block;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.7);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    color: white;
+    z-index: 3;
+  }
+  // display: table-row;
+  // display: table;
+  // width: 100%;
+  // height: 100%;
+  // vertical-align: middle;
+  // z-index: 4;
+  // position: relative;
+
+  .jumbotron {
+    background: transparent;
+
+    &::-webkit-scrollbar {
+      width: 1px;
+    }
+  }
+  #wrap {
+  }
+
+  #footer {
+    display: table-row;
+    margin: 0;
+    // border: none !important;
+    height: 1px !important;
+
+    & > div {
+      border-top: 1px solid #e6e6e6 !important;
+      padding: 1rem;
+    }
+
+    div > a.nav-link {
+      color: #ABAAAA;
+      padding: 2px 5px;
+      cursor: pointer;
+    }
+  }
+}
+@media screen and (max-width: 768px){
+  #wrap {
+  }
+}
+
+a {
+  cursor: default;
+}
+
+progress[value] {
+  &::-webkit-progress-bar {
+    background-color: #eee;
+    border-radius: 1em;
+  }
+
+  &::-webkit-progress-value {
+    background-color: rgb(233, 30, 99);
+    border-radius: 1em;
+  }
+}
+
+@keyframes pulse {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.05);
+  }
+  100% {
+      transform:  scale(1);
+  }
+}
+
+.pulse {
+  animation-name: pulse;
+}
+
+.btn {
+
+  &:focus {
+    outline: none;
+  }
+}
+
+
+.slide {
+  &.on {
+    height: inherit;
+    width: inherit;
+    opacity: 1;
+    overflow: inherit;
+    transform: translate(0%);
+  }
+  &.off {
+    height: 0;
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+    transform: translate(-100%, 0%);
+  }
+}
+
+
+.note-editor {
+  border: none !important;
+  background: transparent !important;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: inherit !important;
+  }
+
+  .note-toolbar {
+    background: transparent !important;
+    border: none !important;
+    text-align: left;
+
+    .btn-default {
+      background: transparent !important;
+      color: white !important;
+    }
+  }
+
+  .note-editable {
+    text-align: left;
+    color: white !important;
+    border: none;
+    font-size: 2rem;
+    height: 356px !important;
+    background: transparent !important;
+  }
+
+  &.fullscreen .note-editable {
+      background-color: rgba(16, 16, 16, 0.93) !important;
+  }
+}
+
+.modal-backdrop.in{
+  z-index: 0;
+}

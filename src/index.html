@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <base href="/" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en-us">
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- favicon and touch icons -->
+    <link rel="shortcut icon" type="image/x-icon" href="depends/assets/ico/favicon.ico">
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" type="text/css" href="depends/assets/css/bootstrap.paper.css">
+    <link rel="stylesheet" type="text/css" href="depends/assets/css/columns.css">
+    <link rel="stylesheet" type="text/css" href="depends/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="depends/assets/fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="depends/assets/fonts/iconfont/material-icons.css">
+
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+
+
+    <script type="text/javascript">
+
+    // Node-Webkit environment
+    if(typeof nw !== 'undefined'){
+      var win = nw.Window.get();
+
+      // global = window;
+      // global.document = window.document;
+      // NW.js fix
+      // window.nw_global = window.global;
+      // window.global = undefined;
+
+      var app = {
+        name : 'Ezinote'
+      }
+    }
+    </script>
+    <script src="depends/fdb-all.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="depends/assets/summernote/summernote.css">
+  </head>
+
+  <body>
+
+    <main id="bg">
+      <div style="display: table; width: 100%; height: 100%;">
+        <div class="jumbotron"
+          style="
+            display:table-cell;
+            vertical-align: middle;
+            z-index: 5;
+            position: relative;
+            text-align: center;
+            color: #EFE6EE;
+            margin:0 auto !important;
+          ">
+          <h1 style="font-size: 10rem; display:inline-block">
+            <div>
+              <span style="display: block; animation: pulse 2s infinite ease-in-out;" class="mat mat-event_note text-white"></span>
+              <small style="display: block; font-size: 1.5rem; letter-spacing: -.25px; ">
+                EziNote v1.0
+              </small>
+            </div>
+          </h1>
+          <br />
+          <br />
+        </div>
+      </div>
+    </main>
+
+    <script type="text/javascript">
+      var g = setInterval(() => {
+        var rand = (Math.floor(Math.random()*25));
+        document.getElementById('bg').style.backgroundImage = 'url("/img/bg/'+rand+'.jpg")'
+      }, 15000)
+    </script>
+
+    <script src="depends/system-polyfills.js"></script>
+    <script src="depends/system.min.js"></script>
+    <script src="depends/Reflect.min.js"></script>
+
+    <script type="text/javascript">
+      System.config({
+        defaultJSExtensions: true,
+        map: {
+          'app': '/app',
+        },
+        packages: {
+          'app': {
+            defaultJSExtensions: true,
+            format: 'cjs',
+            main: 'index.js'
+          },
+          'angular': {
+            defaultJSExtensions: true,
+            format: 'register'
+          }
+        }
+      });
+    </script>
+
+    <script src="depends/angular2-polyfills.min.js"></script>
+    <script src="depends/angular2.min.js"></script>
+    <script src="depends/Rx.min.js"></script>
+
+    <script type="text/javascript"></script>
+
+    <script src="depends/assets/js/jquery.js"></script>
+    <script src="depends/assets/js/bootstrap.min.js"></script>
+    <script src="depends/assets/summernote/summernote.min.js"></script>
+
+    <script>
+      System.import('app').catch(console.log.bind(console));
+    </script>
+  </body>
+</html>

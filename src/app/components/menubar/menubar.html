@@ -1,0 +1,83 @@
+<!-- NAV BAR CONTENT -->
+<div class="menu">
+  <div class="container" style="margin:1rem auto">
+    <h5>
+      <span class="mat mat-today"></span>
+      <span style="font-size: 10pt;"> {{ date | date}} </span>
+    </h5>
+    <ul class="nav">
+      <li>
+        <a href="#" (click)="onSwitch($event, 'main')">
+          <span class="mat mat-home fa-lg"></span>
+        </a>
+      </li>
+      <li>
+        <a href="#" (click)="onSwitch($event, 'book')">
+          <span class="mat mat-event_note fa-lg"></span>
+        </a>
+      </li>
+      <li>
+        <a href="#" (click)="onSwitch($event, 'create')">
+          <span class="mat mat-create fa-lg"></span>
+        </a>
+      </li>
+      <li>
+        <a href="#" (click)="onModalShow($event, 'user')">
+          <span class="mat mat-person_outline fa-lg"></span>
+        </a>
+      </li>
+      <li>
+        <a href="#" (click)="onModalShow($event, 'about')">
+          <span class="mat mat-favorite fa-lg text-danger"> </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div [class.on]="show_modal.user" [class.off]="!show_modal.user" class="my_modal slide">
+  <span class="close text-white" (click)="onModalHide('user')">X</span>
+  <div class="my_modal_content text-center container">
+    <form class="form" (submit)="onModalSave($event)">
+      <div [hidden]="!error" class="form-group">
+        <div class="alert alert-danger">
+          Please input a valid name with at least 3 characters.
+        </div>
+      </div>
+      <div class="form-group">
+        <h1><span class="text-white mat mat-face fa-4x"></span></h1>
+      </div>
+      <br />
+      <div class="form-group col-md-6 col-xs-8 col-center">
+        <input #input type="text" class="form-control" [value]="user" placeholder="Enter your name">
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-circle btn-lg">
+          <span class="mat mat-keyboard_arrow_down fa-lg"></span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div [class.on]="show_modal.about" [class.off]="!show_modal.about" class="my_modal slide">
+  <span class="close text-white" (click)="onModalHide('about')">X</span>
+  <div class="my_modal_content text-center container">
+    <div class="col-xs-8 col-sm-6 col-md-5 col-lg-4 col-center bg-white" id="about_block">
+      <h1>
+        <small><span class="mat mat-event_note fa-lg"></span></small>
+        EziNote
+        <small>v1.0</small>
+      </h1>
+      <p class="lead">
+        This program was inspired and crafted by <span class="text-danger block">LOVE</span>
+      </p>
+      <footer class="">
+        <strong>jeremiahogbomo@gmail.com</strong>
+        <br />
+        <span class="text-primary">@jogboms</span> &lt;#handikraft/&gt;
+      </footer>
+    </div>
+  </div>
+</div>
+<!-- END NAV BAR CONTENT -->
